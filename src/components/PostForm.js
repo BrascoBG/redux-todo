@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import store from "../store";
 
 const Posts = () => {
   const [title, setTitle] = useState("");
@@ -18,7 +19,10 @@ const Posts = () => {
       body: JSON.stringify(post),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data);
+        store.dispatch({ type: "ADD_BOOL" });
+      })
       .catch((err) => console.log(err));
   };
 
