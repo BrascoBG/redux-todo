@@ -1,20 +1,16 @@
-import React from "react";
-import Posts from "./components/Posts";
-import PostsForm from "./components/PostForm";
-import { Provider } from "react-redux";
-import store from "./store";
-import "./App.css";
+import React, { Component } from "react";
+import InputFields from "./components/inputFields";
 
-function App() {
-  return (
-    <Provider store={store}>
+class App extends Component {
+  render() {
+    return (
       <div className="App">
-        <PostsForm />
-        <hr />
-        <Posts />
+        <h1>Something like ToDo List</h1>
+        <h3>(Redux with Class Components)</h3>
+        <InputFields />
       </div>
-    </Provider>
-  );
+    );
+  }
 }
 
 export default App;
