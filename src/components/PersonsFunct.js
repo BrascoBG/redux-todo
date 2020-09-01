@@ -1,6 +1,6 @@
 import React from "react";
 
-const Persons = (props) => {
+const PersonsFunct = (props) => {
   return (
     <div>
       {props.persons.map((person) => (
@@ -9,9 +9,14 @@ const Persons = (props) => {
           className="persons"
           style={{ background: person.completed ? "gray" : "" }}
         >
-          <input type="checkbox" onChange={() => props.change(person.id)} />
+          <label htmlFor="check">{person.completed ? "Unmark" : "Mark"}</label>
+          <input
+            id="check"
+            type="checkbox"
+            onChange={() => props.change(person.id)}
+          />
           <br />
-          <button onClick={() => props.clicked(person.id)}>X</button>
+          <button onClick={() => props.clicked(person.id)}>Delete</button>
           <h1>{person.name}</h1>
           <h3>{person.age}</h3>
         </div>
@@ -20,4 +25,4 @@ const Persons = (props) => {
   );
 };
 
-export default Persons;
+export default PersonsFunct;

@@ -1,5 +1,5 @@
 import React from "react";
-import Persons from "./Persons";
+import PersonsClass from "./PersonsClass";
 import { connect } from "react-redux";
 import * as actionTypes from "../store/actions";
 
@@ -21,6 +21,7 @@ class inputFields extends React.Component {
   render() {
     return (
       <div>
+        <h5>This is a Class Component managed with REDUX</h5>
         <form onSubmit={this.demo}>
           <input
             type="text"
@@ -43,7 +44,7 @@ class inputFields extends React.Component {
         </form>
 
         <hr />
-        <Persons
+        <PersonsClass
           persons={this.props.persons}
           clicked={(id) => this.props.onDelete(id)}
           change={(id) => this.props.onChange(id)}
@@ -55,7 +56,7 @@ class inputFields extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    persons: state.persons,
+    persons: state.classRed.persons,
   };
 };
 

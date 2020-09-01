@@ -1,30 +1,30 @@
-import * as actionTypes from "./actions";
+import * as actionTypes from "../actions";
 
 const initialState = {
-  persons: [],
+  data: [],
 };
 
-const reducer = (state = initialState, action) => {
+const functReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.ADD_PERSON:
+    case actionTypes.FUNCT_ADD:
       return {
         ...state,
-        persons: state.persons.concat({
+        data: state.data.concat({
           id: new Date(),
           name: action.personData.name,
           age: action.personData.age,
           completed: false,
         }),
       };
-    case actionTypes.DELETE_PERSON:
+    case actionTypes.FUNCT_DELETE:
       return {
         ...state,
-        persons: state.persons.filter((person) => person.id !== action.resId),
+        data: state.data.filter((person) => person.id !== action.resId),
       };
-    case actionTypes.CHECK_PERSON:
+    case actionTypes.FUNCT_CHECK:
       return {
         ...state,
-        persons: state.persons.map((person) => {
+        data: state.data.map((person) => {
           if (person.id === action.changeId) {
             person.completed = !person.completed;
           }
@@ -36,4 +36,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default functReducer;

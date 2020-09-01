@@ -4,12 +4,18 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
-import reducer from "./store/reducer";
+import classReducer from "./store/reducers/classReducer";
+import functReducer from "./store/reducers/functReducer";
+
+const rootReducers = combineReducers({
+  classRed: classReducer,
+  functRed: functReducer,
+});
 
 const store = createStore(
-  reducer,
+  rootReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 store.subscribe(() => {
