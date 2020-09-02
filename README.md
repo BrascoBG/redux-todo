@@ -1,3 +1,13 @@
+# To Do List with Redux
+
+Application with Redux state managment without CSS.
+It renders two equal components, one functional and one Class.
+Two combined reducers for each component.
+
+## Screenshot
+
+![Screenshot](https://github.com/BrascoBG/Wallstreet-Bull/blob/master/src/assets/screenshots/auth.jpg?raw=true)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
